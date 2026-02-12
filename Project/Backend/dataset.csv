@@ -1,0 +1,39 @@
+code,label
+"SELECT * FROM users WHERE id = " + user_id,1
+"SELECT * FROM users WHERE id = ?",0
+"password = '123456'",1
+"password = os.getenv('DB_PASS')",0
+"eval(user_input)",1
+"print(user_input)",0
+"import os; os.system('rm -rf /')",1
+"import os; print(os.getcwd())",0
+"x = input(); exec(x)",1
+"x = input(); print(x)",0
+"cursor.execute('SELECT * FROM ' + table)",1
+"cursor.execute('SELECT * FROM users')",0
+"user = request.args.get('user'); query = 'SELECT * FROM users WHERE name = ' + user",1
+"user = request.args.get('user'); query = 'SELECT * FROM users WHERE name = %s', (user,)",0
+"secret_key = 'my_secret_key'",1
+"secret_key = config.get('SECRET_KEY')",0
+"pickle.loads(data)",1
+"json.loads(data)",0
+"subprocess.call('ls ' + user_input, shell=True)",1
+"subprocess.call(['ls', user_input])",0
+"open(filename, 'w').write(data)",0
+"open(user_input_filename, 'w').write(data)",1
+"yaml.load(data)",1
+"yaml.safe_load(data)",0
+"hashlib.md5(password).hexdigest()",1
+"hashlib.sha256(password).hexdigest()",0
+"app.run(debug=True)",1
+"app.run(debug=False)",0
+"requests.get(url, verify=False)",1
+"requests.get(url, verify=True)",0
+"lxml.etree.parse(xml_file)",1
+"defusedxml.ElementTree.parse(xml_file)",0
+"tarfile.open(filename)",1
+"zipfile.ZipFile(filename)",0
+"random.random()",1
+"secrets.token_hex()",0
+"tempfile.mktemp()",1
+"tempfile.mkstemp()",0
